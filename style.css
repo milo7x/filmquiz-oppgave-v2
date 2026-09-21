@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  background-color: #182235;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header, footer {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+main {
+  max-width: 620px;
+  margin: 50px auto;
+}
+
+h1 {
+  font-size: 42px;
+}
+
+.quiz {
+  background-color: white;
+  color: #182235;
+  padding: 30px;
+  border-radius: 12px;
+}
