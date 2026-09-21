@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmquiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <span class="merke">Filmquiz</span>
+    <span>EN LITEN FILMQUIZ</span>
+  </header>
+
+  <main>
+    <h1>Hvor godt kjenner<br>du filmene?</h1>
+
+    <section class="quiz" aria-label="Filmquiz">
+      <p id="fremdrift"></p>
+      <h2 id="sporsmal"></h2>
+
+      <form id="skjema">
+        <div id="alternativer"
+             role="radiogroup"
+             aria-labelledby="sporsmal"></div>
+
+        <button id="svarknapp" type="submit">Svar</button>
+      </form>
+
+      <output id="resultat" aria-live="polite"></output>
+      <button id="restart" type="button" hidden>Prøv igjen</button>
+    </section>
+  </main>
+
+  <footer>
+    <span>Film tid</span>
+    <span>Good luck!</span>
+  </footer>
+</body>
+</html>
