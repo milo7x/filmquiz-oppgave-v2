@@ -8,6 +8,46 @@ const sporsmalListe = [
     tekst: "Hvilken skole går Harry Potter på?",
     alternativer: ["Narnia", "Hogwart", "Nevermore", "Durmstrang"],
     riktig: 2
+  },
+  {
+    tekst: "Hva slags dyr er Simba i Løvenes konge?",
+    alternativer: ["Tiger", "Bjørn", "Løve", "Ulv"],
+    riktig: 3
+  },
+  {
+    tekst: "Hva heter snømannen i Frost?",
+    alternativer: ["Sven", "Olaf", "Kristoffer", "Hans"],
+    riktig: 2
+  },
+  {
+    tekst: "I hvilken film møter vi Jack og Rose på et skip?",
+    alternativer: ["Titanic", "Avatar", "Haisommer", "King Kong"],
+    riktig: 1
+  },
+  {
+    tekst: "Hvilken superhelt er Peter Parker?",
+    alternativer: ["Batman", "Iron Man", "Superman", "Spider-Man"],
+    riktig: 4
+  },
+  {
+    tekst: "Hva slags dyr er Nemo i Oppdrag Nemo?",
+    alternativer: ["Delfin", "Klovnefisk", "Hai", "Sjøhest"],
+    riktig: 2
+  },
+  {
+    tekst: "Hvilken filmserie har figuren Darth Vader?",
+    alternativer: ["Star Wars", "Ringenes herre", "Jurassic Park", "Star Trek"],
+    riktig: 1
+  },
+  {
+    tekst: "Hva heter hobbiten som får i oppdrag å ødelegge Ringen?",
+    alternativer: ["Bilbo", "Sam", "Gollum", "Frodo"],
+    riktig: 4
+  },
+  {
+    tekst: "Hvilken farge har Shrek?",
+    alternativer: ["Blå", "Grønn", "Rød", "Lilla"],
+    riktig: 2
   }
 ];
 
