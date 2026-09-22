@@ -10,3 +10,18 @@ const sporsmalListe = [
     riktig: 2
   }
 ];
+
+let nummer = 0;
+
+const sporsmal = document.getElementById("sporsmal");
+const fremdrift = document.getElementById("fremdrift");
+
+function visSporsmal() {
+  const aktivt = sporsmalListe[nummer];
+
+  sporsmal.textContent = aktivt.tekst;
+  fremdrift.textContent = "Spørsmål " + (nummer + 1) +
+    " av " + sporsmalListe.length;
+}
+
+visSporsmal();
