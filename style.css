@@ -26,3 +26,41 @@ h1 {
   padding: 30px;
   border-radius: 12px;
 }
+
+#alternativer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+#alternativer label {
+  padding: 15px;
+  border: 2px solid #d9dfe8;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#alternativer label:hover {
+  background-color: #f1f4f8;
+}
+
+#alternativer label:has(input:checked) {
+  background-color: #fff3c7;
+  border-color: #b88a08;
+}
+
+button {
+  background-color: #f8cb46;
+  color: #182235;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input:focus-visible, button:focus-visible {
+  outline: 3px solid #3273d3;
+  outline-offset: 3px;
+}
