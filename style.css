@@ -6,6 +6,8 @@ body {
 }
 
 header, footer {
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 25px;
   display: flex;
   justify-content: space-between;
@@ -63,4 +65,10 @@ button {
 input:focus-visible, button:focus-visible {
   outline: 3px solid #3273d3;
   outline-offset: 3px;
+}
+
+#resultat {
+  display: block;
+  margin-top: 20px;
+  line-height: 1.5;
 }
