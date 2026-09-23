@@ -10,7 +10,7 @@ const sporsmalListe = [
     riktig: 2
   },
   {
-    tekst: "Hva slags dyr er Simba i Løvenes konge?",
+    tekst: "Hva slags dyr er Simba?",
     alternativer: ["Tiger", "Bjørn", "Løve", "Ulv"],
     riktig: 3
   },
@@ -35,7 +35,7 @@ const sporsmalListe = [
     riktig: 2
   },
   {
-    tekst: "Hvilken filmserie har figuren Darth Vader?",
+    tekst: "Fra hvilket film kommer Darth Vader fra?",
     alternativer: ["Star Wars", "Ringenes herre", "Jurassic Park", "Star Trek"],
     riktig: 1
   },
@@ -53,6 +53,7 @@ const sporsmalListe = [
 
 let nummer = 0;
 let besvart = false;
+let poeng = 0;
 
 const sporsmal = document.getElementById("sporsmal");
 const fremdrift = document.getElementById("fremdrift");
@@ -98,7 +99,7 @@ visSporsmal();
 skjema.addEventListener("submit", function(event) {
   event.preventDefault();
 
-    if (besvart) {
+  if (besvart) {
     nummer++;
 
     if (nummer < sporsmalListe.length) {
@@ -106,7 +107,8 @@ skjema.addEventListener("submit", function(event) {
     } else {
       sporsmal.textContent = "Quizen er ferdig!";
       skjema.hidden = true;
-      resultat.textContent = "Du har svart på alle spørsmålene.";
+      resultat.textContent = "Du fikk " + poeng + "/" +
+        sporsmalListe.length + " riktige.";
     }
 
     return;
@@ -121,13 +123,14 @@ skjema.addEventListener("submit", function(event) {
   const aktivt = sporsmalListe[nummer];
 
   if (Number(valgt.value) === aktivt.riktig) {
+    poeng++;
     resultat.textContent = "Riktig svar!";
   } else {
     resultat.textContent = "Feil svar. Riktig svar var " +
       aktivt.alternativer[aktivt.riktig - 1] + ".";
   }
 
-    const inputs = alternativer.querySelectorAll("input");
+  const inputs = alternativer.querySelectorAll("input");
 
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].disabled = true;
