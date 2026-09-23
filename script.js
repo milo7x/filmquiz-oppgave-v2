@@ -6,7 +6,7 @@ const sporsmalListe = [
   },
   {
     tekst: "Hvilken skole går Harry Potter på?",
-    alternativer: ["Narnia", "Hogwart", "Nevermore", "Durmstrang"],
+    alternativer: ["Narnia", "Hogwarts", "Nevermore", "Durmstrang"],
     riktig: 2
   },
   {
@@ -52,6 +52,7 @@ const sporsmalListe = [
 ];
 
 let nummer = 0;
+let besvart = false;
 
 const sporsmal = document.getElementById("sporsmal");
 const fremdrift = document.getElementById("fremdrift");
@@ -62,6 +63,10 @@ const svarknapp = document.getElementById("svarknapp");
 
 function visSporsmal() {
   const aktivt = sporsmalListe[nummer];
+
+  besvart = false;
+  resultat.textContent = "";
+  svarknapp.textContent = "Svar";
 
   sporsmal.textContent = aktivt.tekst;
   fremdrift.textContent = "Spørsmål " + (nummer + 1) +
@@ -93,6 +98,20 @@ visSporsmal();
 skjema.addEventListener("submit", function(event) {
   event.preventDefault();
 
+    if (besvart) {
+    nummer++;
+
+    if (nummer < sporsmalListe.length) {
+      visSporsmal();
+    } else {
+      sporsmal.textContent = "Quizen er ferdig!";
+      skjema.hidden = true;
+      resultat.textContent = "Du har svart på alle spørsmålene.";
+    }
+
+    return;
+  }
+
   const valgt = document.querySelector('input[name="svar"]:checked');
 
   if (!valgt) {
@@ -114,5 +133,11 @@ skjema.addEventListener("submit", function(event) {
     inputs[i].disabled = true;
   }
 
-  svarknapp.disabled = true;
+  besvart = true;
+
+  if (nummer === sporsmalListe.length - 1) {
+    svarknapp.textContent = "Avslutt quizen";
+  } else {
+    svarknapp.textContent = "Neste spørsmål";
+  }
 });
