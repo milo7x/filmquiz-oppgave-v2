@@ -55,8 +55,9 @@ let nummer = 0;
 
 const sporsmal = document.getElementById("sporsmal");
 const fremdrift = document.getElementById("fremdrift");
-
 const alternativer = document.getElementById("alternativer");
+const skjema = document.getElementById("skjema");
+const resultat = document.getElementById("resultat");
 
 function visSporsmal() {
   const aktivt = sporsmalListe[nummer];
@@ -87,3 +88,22 @@ function visSporsmal() {
 }
 
 visSporsmal();
+
+skjema.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const valgt = document.querySelector('input[name="svar"]:checked');
+
+  if (!valgt) {
+    return;
+  }
+
+  const aktivt = sporsmalListe[nummer];
+
+  if (Number(valgt.value) === aktivt.riktig) {
+    resultat.textContent = "Riktig svar!";
+  } else {
+    resultat.textContent = "Feil svar. Riktig svar var " +
+      aktivt.alternativer[aktivt.riktig - 1] + ".";
+  }
+});
