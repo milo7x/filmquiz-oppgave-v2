@@ -61,6 +61,7 @@ const alternativer = document.getElementById("alternativer");
 const skjema = document.getElementById("skjema");
 const resultat = document.getElementById("resultat");
 const svarknapp = document.getElementById("svarknapp");
+const restart = document.getElementById("restart");
 
 function visSporsmal() {
   const aktivt = sporsmalListe[nummer];
@@ -109,6 +110,8 @@ skjema.addEventListener("submit", function(event) {
       skjema.hidden = true;
       resultat.textContent = "Du fikk " + poeng + "/" +
         sporsmalListe.length + " riktige.";
+      restart.hidden = false;
+      restart.focus();
     }
 
     return;
@@ -143,4 +146,12 @@ skjema.addEventListener("submit", function(event) {
   } else {
     svarknapp.textContent = "Neste spørsmål";
   }
+});
+
+restart.addEventListener("click", function() {
+  nummer = 0;
+  poeng = 0;
+  skjema.hidden = false;
+  restart.hidden = true;
+  visSporsmal();
 });
