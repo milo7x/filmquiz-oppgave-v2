@@ -58,6 +58,7 @@ const fremdrift = document.getElementById("fremdrift");
 const alternativer = document.getElementById("alternativer");
 const skjema = document.getElementById("skjema");
 const resultat = document.getElementById("resultat");
+const svarknapp = document.getElementById("svarknapp");
 
 function visSporsmal() {
   const aktivt = sporsmalListe[nummer];
@@ -106,4 +107,12 @@ skjema.addEventListener("submit", function(event) {
     resultat.textContent = "Feil svar. Riktig svar var " +
       aktivt.alternativer[aktivt.riktig - 1] + ".";
   }
+
+    const inputs = alternativer.querySelectorAll("input");
+
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].disabled = true;
+  }
+
+  svarknapp.disabled = true;
 });
